@@ -1,0 +1,10 @@
+#to load the .run file in the AMPL console, you need to enter "include TreePriceOptimization.run;"
+# SYS 6003 Final Project Fall 2024 
+reset;
+option solver gurobi;
+model TreePriceOptimization.mod;
+data TreePriceOptimization.dat;
+solve;
+display x;
+display y;
+display TotalCost;
