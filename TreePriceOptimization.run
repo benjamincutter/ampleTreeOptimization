@@ -5,6 +5,6 @@ option solver gurobi;
 model TreePriceOptimization.mod;
 data TreePriceOptimization.dat;
 solve;
-display x;
-display y;
+display xi;
+display yi;
 display TotalCost;
