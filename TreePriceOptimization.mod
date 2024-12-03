@@ -40,6 +40,8 @@ var yj {j in decid} integer >=0; # Deciduous trees quantity
 minimize TotalCost:sum{i in evergreen} cost_i[i]*xi[i] + sum{j in decid} cost_j[j]*yj[j];
 
 # Constraints
+subject to CrownProj {i in evergreen}: cp_i[i] = ((wi[i]/2)^2)*pi; # Crown Projection Calc - eqn 1
+subject to TotalCanopy: Rcc = (sum{i in evergreen} cp_i[i]*xi[i] + sum{j in decid} cp_j[j]*yj[j])*100/AL; # Rcc calc - eqn2
 subject to AreaRatio: AP >=a*AA;  # Constraint 4
 subject to MinTrees:sum{i in evergreen} cr_i[i]*xi[i] + sum{j in decid} cr_j[j]*yj[j] >= b*AL; # Constraint 5
 subject to EvergreenRatio: sum{i in evergreen} cr_i[i]*xi[i] >= e*(sum{i in evergreen} cr_i[i]*xi[i] + sum{j in decid} cr_j[j]*yj[j]); # Constraint 6
@@ -48,7 +50,5 @@ subject to LargeTreeRatio: sum{i in evergreen} xir[i] + sum{j in decid} yjr[j] >
 subject to MaxCanopyCoverage: sum{i in evergreen} cp_i[i]*xi[i] + sum{j in decid} cp_i[j]*yj[j] <= Rccmax*AL; # Constraint 9
 subject to MinCanopyCoverage: sum{i in evergreen} cp_i[i]*xi[i] + sum{j in decid} cp_i[j]*yj[j] >= Rccmin*AL; # Constraint 10
 subject to CarbonAbsorb: sum{i in evergreen} vi[i]*xi[i] + sum{j in decid} vj[j]*yj[j]; # Constraint 11
-subject to MinRatioEvergreen {i in evergreen}; xi{i] >= m*(sum{i in evergreen} xi[i] + sum(j in decid} yj[j]); # Constraint 12
-subject to MinRatioDecid {j in decid}; yj[j] >= m*(sum{i in evergreen} xi[i] + sum(j in decid} yj[j]); # Constraint 12
-
-
+subject to MinRatioEvergreen {i in evergreen}: xi{i] >= m*(sum{i in evergreen} xi[i] + sum(j in decid} yj[j]); # Constraint 12
+subject to MinRatioDecid {j in decid}: yj[j] >= m*(sum{i in evergreen} xi[i] + sum(j in decid} yj[j]); # Constraint 12
