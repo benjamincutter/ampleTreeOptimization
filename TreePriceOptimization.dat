@@ -1,0 +1,128 @@
+# Sets
+set Evergreen := 
+    Abies_holophylla 
+    Pinus_densiflora_1 
+    Pinus_densiflora_2 
+    Pinus_densiflora_var_globosa 
+    Taxus_cuspidata 
+    White_pine;
+
+set Deciduous := 
+    Acer_palmatum 
+    Betula_platyphylla 
+    Cercidiphyllum_japonicum_S_et_Z 
+    Chaenomeles_sinensis 
+    Chionanthus_retusus 
+    Cornus_officinalis 
+    Ginkgo_biloba 
+    Kobus_magnolia 
+    Liriodendron_tulipifera 
+    Oak 
+    Persimmon 
+    Prunus_armeniaca 
+    Prunus_yedoensis 
+    Sophora_japonica 
+    Zelkova_serrata;
+
+
+# area params
+param A_A := 2000;
+param A_L := 1000;
+
+# ratios
+param m := .5;
+
+# coefficients
+
+# Tree attributes as parameters
+param cost :=
+    Abies_holophylla 135
+    Pinus_densiflora_1 1949
+    Pinus_densiflora_2 2881
+    Pinus_densiflora_var_globosa 1398
+    Taxus_cuspidata 1864
+    White_pine 57
+    Acer_palmatum 796
+    Betula_platyphylla 279
+    Cercidiphyllum_japonicum_S_et_Z 423
+    Chaenomeles_sinensis 381
+    Chionanthus_retusus 550
+    Cornus_officinalis 211
+    Ginkgo_biloba 406
+    Kobus_magnolia 423
+    Liriodendron_tulipifera 389
+    Oak 423
+    Persimmon 186
+    Prunus_armeniaca 55
+    Prunus_yedoensis 576
+    Sophora_japonica 322
+    Zelkova_serrata 1949;
+
+param credit :=
+    Abies_holophylla 1
+    Pinus_densiflora_1 4
+    Pinus_densiflora_2 4
+    Pinus_densiflora_var_globosa 1
+    Taxus_cuspidata 1
+    White_pine 1
+    Acer_palmatum 4
+    Betula_platyphylla 1
+    Cercidiphyllum_japonicum_S_et_Z 2
+    Chaenomeles_sinensis 2
+    Chionanthus_retusus 2
+    Cornus_officinalis 1
+    Ginkgo_biloba 2
+    Kobus_magnolia 2
+    Liriodendron_tulipifera 2
+    Oak 2
+    Persimmon 1
+    Prunus_armeniaca 1
+    Prunus_yedoensis 2
+    Sophora_japonica 2
+    Zelkova_serrata 4;
+
+param crown_coverage :=
+    Abies_holophylla 1.8
+    Pinus_densiflora_1 24.6
+    Pinus_densiflora_2 24.6
+    Pinus_densiflora_var_globosa 4.9
+    Taxus_cuspidata 3.1
+    White_pine 3.1
+    Acer_palmatum 6.2
+    Betula_platyphylla 9.6
+    Cercidiphyllum_japonicum_S_et_Z 8.0
+    Chaenomeles_sinensis 6.2
+    Chionanthus_retusus 6.2
+    Cornus_officinalis 1.8
+    Ginkgo_biloba 9.6
+    Kobus_magnolia 9.6
+    Liriodendron_tulipifera 9.6
+    Oak 6.2
+    Persimmon 4.9
+    Prunus_armeniaca 2.5
+    Prunus_yedoensis 8.0
+    Sophora_japonica 8.0
+    Zelkova_serrata 9.6;
+
+param co2_absorption :=
+    Abies_holophylla 2.2
+    Pinus_densiflora_1 5.4
+    Pinus_densiflora_2 5.4
+    Pinus_densiflora_var_globosa 5.4
+    Taxus_cuspidata 0.5
+    White_pine 3.8
+    Acer_palmatum 3.1
+    Betula_platyphylla 3.8
+    Cercidiphyllum_japonicum_S_et_Z 3.8
+    Chaenomeles_sinensis 3.8
+    Chionanthus_retusus 3.5
+    Cornus_officinalis 2.9
+    Ginkgo_biloba 4.5
+    Kobus_magnolia 3.8
+    Liriodendron_tulipifera 3.8
+    Oak 3.8
+    Persimmon 3.8
+    Prunus_armeniaca 3.8
+    Prunus_yedoensis 9.0
+    Sophora_japonica 3.8
+    Zelkova_serrata 14.8;

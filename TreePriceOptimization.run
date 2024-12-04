@@ -2,9 +2,9 @@
 # SYS 6003 Final Project Fall 2024 
 reset;
 option solver gurobi;
-model TreePriceOptimization.mod;
-data TreePriceOptimization.dat;
+model /Users/bcutter/UVA/OptimizationModelsI/ampleTreeOptimization/SimpleOptimization.mod;
+data /Users/bcutter/UVA/OptimizationModelsI/ampleTreeOptimization/TreePriceOptimization.dat;
 solve;
-display xi;
-display yi;
+display x;
+display y;
 display TotalCost;
