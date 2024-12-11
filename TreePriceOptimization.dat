@@ -27,12 +27,11 @@ set Deciduous :=
 
 # area params
 param A_A := 2000;
-param A_L := 1000;
+param A_L := 2000;
 
-# ratios
-param m := .5;
+# b is the coefficient of minimum quantity of trees ratio to landscape area
+param b := .1;
 
-# coefficients
 
 # Tree attributes as parameters
 param cost :=
@@ -126,3 +125,49 @@ param co2_absorption :=
     Prunus_yedoensis 9.0
     Sophora_japonica 3.8
     Zelkova_serrata 14.8;
+    
+param is_native :=
+    Abies_holophylla 0
+    Pinus_densiflora_1 0
+    Pinus_densiflora_2 0
+    Pinus_densiflora_var_globosa 0
+    Taxus_cuspidata 0
+    White_pine 0
+    Acer_palmatum 0
+    Betula_platyphylla 0
+    Cercidiphyllum_japonicum_S_et_Z 0
+    Chaenomeles_sinensis 0
+    Chionanthus_retusus 0
+    Cornus_officinalis 0
+    Ginkgo_biloba 1
+    Kobus_magnolia 0
+    Liriodendron_tulipifera 0
+    Oak 0
+    Persimmon 0
+    Prunus_armeniaca 0
+    Prunus_yedoensis 0
+    Sophora_japonica 1
+    Zelkova_serrata 0;
+    
+param is_large_tree :=
+    Abies_holophylla 0
+    Pinus_densiflora_1 1
+    Pinus_densiflora_2 1
+    Pinus_densiflora_var_globosa 0
+    Taxus_cuspidata 0
+    White_pine 0
+    Acer_palmatum 1
+    Betula_platyphylla 0
+    Cercidiphyllum_japonicum_S_et_Z 0
+    Chaenomeles_sinensis 0
+    Chionanthus_retusus 0
+    Cornus_officinalis 0
+    Ginkgo_biloba 0
+    Kobus_magnolia 0
+    Liriodendron_tulipifera 0
+    Oak 0
+    Persimmon 0
+    Prunus_armeniaca 0
+    Prunus_yedoensis 0
+    Sophora_japonica 0
+    Zelkova_serrata 1;
