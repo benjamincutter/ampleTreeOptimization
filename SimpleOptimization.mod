@@ -28,7 +28,7 @@ param A_P > 0;
 # m is the minimum percent of each tree that must be included for diversificiation.  Here we use 2%
 param m := 0.02;
 
-# a is amount expected to be planted, in this case 50%
+# a is amount expected to be planted, in this case 20%
 param a := .2;
 
 # the coefficient of minimum quantity of trees ratio to landscape area
@@ -48,7 +48,7 @@ param r := .1;
 param R_min := .4;
 param R_max := .6;
 
-# TODO: Maybe find an evidence based value for this - goal that can change
+
 # CDA is the total annual carbon dioxide absorption of planted trees (kg/year)
 # Completely arbitrary value with no real meaning right now
 # This is a cool value to play with that demonstrates shadow prices / sensitivity analysis
