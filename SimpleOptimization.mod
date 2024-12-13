@@ -23,12 +23,13 @@ param is_large_tree { Evergreen union Deciduous };
 # Standalone params
 param A_A > 0;
 param A_L > 0;
+param A_P > 0;
 
 # m is the minimum percent of each tree that must be included for diversificiation.  Here we use 2%
 param m := 0.02;
 
 # a is amount expected to be planted, in this case 50%
-param a := .8;
+param a := .2;
 
 # the coefficient of minimum quantity of trees ratio to landscape area
 param b;
@@ -42,17 +43,17 @@ param v := .1;
 # r is the ratio of large trees, using 10%
 param r := .1;
 
-# TODO: Maybe find an evidence based ratio
-# minimum and maximum canopy coverage, respectively.  In this case 30% - 70% coverage acceptable
-param R_min := .3;
-param R_max := .7;
+# Range used in scenario 1
+# minimum and maximum canopy coverage, respectively.  In this case 40% - 60% coverage acceptable
+param R_min := .4;
+param R_max := .6;
 
-# TODO: Maybe find an evidence based value for this
+# TODO: Maybe find an evidence based value for this - goal that can change
 # CDA is the total annual carbon dioxide absorption of planted trees (kg/year)
 # Completely arbitrary value with no real meaning right now
 # This is a cool value to play with that demonstrates shadow prices / sensitivity analysis
 # Zelkova_serrata has a great C02 absorption:cost ratio, so increasing this constraint increases the count
-param CDA := 20;
+param CDA := 1000;
 
 # Variables
 var x { Evergreen } integer >= 0;
@@ -74,7 +75,7 @@ minimize TotalCost:
 # This seems more like an input validation constraint.  It is not required for solving,
 # but ensures that the minimum tree coverage meets the coverage threshold of total land
 subject to Minimum_Tree_Planting_Area_Meets_Ratio:
-	A_L >= A_A * m;
+	A_P >= A_A * a;
 
 # Constraint (5) denotes the minimum num- ber of trees per square meter for the total landscape area
 # The sum of credits for Evergreen and Deciduous trees meets minimum number of trees per square meter
