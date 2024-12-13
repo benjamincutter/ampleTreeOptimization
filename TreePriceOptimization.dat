@@ -26,8 +26,9 @@ set Deciduous :=
 
 
 # area params
-param A_A := 2000;
-param A_L := 2000;
+param A_A := 33200;
+param A_L := 10000;
+param A_P := 7326;
 
 # b is the coefficient of minimum quantity of trees ratio to landscape area
 param b := .1;
